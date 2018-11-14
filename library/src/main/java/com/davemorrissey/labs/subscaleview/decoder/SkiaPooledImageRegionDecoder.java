@@ -283,6 +283,14 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
     }
 
     /**
+     * No orientation read from source. Supply default
+     * */
+    @Override
+    public int getOrientation() {
+        return 0;
+    }
+
+    /**
      * Holding a read lock to avoid returning true while the pool is being recycled, this returns
      * true if the pool has at least one decoder available.
      */

@@ -131,7 +131,6 @@ public class SkiaImageRegionDecoder implements ImageRegionDecoder {
         }
     }
 
-
     /**
      * No orientation read from source. Supply default
      * */
