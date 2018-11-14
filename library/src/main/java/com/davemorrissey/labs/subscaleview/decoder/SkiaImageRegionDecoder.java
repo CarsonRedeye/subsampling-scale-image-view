@@ -131,6 +131,15 @@ public class SkiaImageRegionDecoder implements ImageRegionDecoder {
         }
     }
 
+
+    /**
+     * No orientation read from source. Supply default
+     * */
+    @Override
+    public int getOrientation() {
+        return 0;
+    }
+
     @Override
     public synchronized boolean isReady() {
         return decoder != null && !decoder.isRecycled();

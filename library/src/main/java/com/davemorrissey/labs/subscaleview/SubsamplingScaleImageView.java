@@ -1559,7 +1559,13 @@ public class SubsamplingScaleImageView extends View {
                     Point dimensions = decoder.init(context, source);
                     int sWidth = dimensions.x;
                     int sHeight = dimensions.y;
-                    int exifOrientation = view.getExifOrientation(context, sourceUri);
+                    int exifOrientationFromDecoder = decoder.getOrientation();
+                    int exifOrientation;
+                    if (exifOrientationFromDecoder == 0) {
+                        exifOrientation = view.getExifOrientation(context, sourceUri);
+                    } else {
+                        exifOrientation = exifOrientationFromDecoder;
+                    }
                     if (view.sRegion != null) {
                         view.sRegion.left = Math.max(0, view.sRegion.left);
                         view.sRegion.top = Math.max(0, view.sRegion.top);

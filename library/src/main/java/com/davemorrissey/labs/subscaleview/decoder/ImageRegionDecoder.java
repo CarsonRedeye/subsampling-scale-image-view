@@ -47,6 +47,14 @@ public interface ImageRegionDecoder {
      */
     @NonNull Bitmap decodeRegion(@NonNull Rect sRect, int sampleSize);
 
+
+    /**
+     * <p>
+     * Check for orientation data that has already been read by the decoder
+     * </p>
+     * */
+    int getOrientation();
+
     /**
      * Status check. Should return false before initialisation and after recycle.
      * @return true if the decoder is ready to be used.
